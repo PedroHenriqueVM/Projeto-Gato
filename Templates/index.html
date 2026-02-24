@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Que gato você é?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+
+<header>
+    <h1>Que gato você seria? 🐱</h1>
+</header>
+
+<div class="container">
+
+    <!-- Mensagens flash -->
+    {% with mensagens = get_flashed_messages() %}
+        {% if mensagens %}
+            <div class="mensagem">
+                {% for msg in mensagens %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Formulário -->
+    <form action="/cat" method="POST">
+        <input type="text" name="nome" autocomplete="off" placeholder="Digite seu nome">
+        <button type="submit">Gerar Gatinho</button>
+    </form>
+
+    <!-- Exibir gato se existir -->
+    {% if url_imagem %}
+        <div class="gato">
+            <h2>Aqui esta o seu gato, {{ nome }} 😺</h2>
+            <img src="{{ url_imagem }}" alt="Imagem de gato">
+
+            <div>
+                <a class="download-btn" href="/download?url={{ url_imagem }}&nome={{ nome }}">
+                    <button>Baixar Gatinho</button>
+                </a>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff9800;
+    color: white;
+    padding: 20px;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+.gato {
+    margin-top: 30px;
+}
+
+img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.mensagem {
+    color: red;
+    margin-top: 15px;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+}   
